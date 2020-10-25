@@ -20,4 +20,6 @@ requireDir('./src/models');
 
 app.use('/hygiaApi', require('./src/routes'));
 
-app.listen(3001);
+app.listen(3001, () => {
+    console.log('Ouvindo 3001')
+});
