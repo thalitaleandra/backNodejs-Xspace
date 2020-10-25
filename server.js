@@ -8,7 +8,11 @@ app.use(express.json());
 app.use(cors());
 mongoose.connect(process.env.DATABASE || "mongodb://localhost:27017/hygiaApi",
     { useNewUrlParser: true, useUnifiedTopology: true },
-);
+).then(() => {
+    console.log('Database successfully connected');
+}).catch(() => {
+    console.log('ops... Cannot connect to database');
+});
 
 requireDir('./src/models');
 
