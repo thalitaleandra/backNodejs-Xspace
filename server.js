@@ -18,7 +18,7 @@ mongoose.connect(process.env.MONGO_URL || "mongodb://localhost:27017/hygiaApi",
 requireDir('./src/models');
 
 
-app.use('/hygiaApi', require('./src/routes'));
+app.use('/', require('./src/routes'));
 
 app.listen(process.env.PORT, () => {
     console.log(`Ouvindo ${process.env.PORT}`)
